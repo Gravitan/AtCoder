@@ -11,7 +11,7 @@
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "-I",
-                "${workspaceFolder}/ac-library-master"
+                "${workspaceFolder}/ac-library"
             ],
             "options": {
                 "cwd": "${fileDirname}"
