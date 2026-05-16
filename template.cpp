@@ -11,14 +11,15 @@ int main() {
     cin.tie(nullptr);
     ll ans = 0;
     
-    ll l, r; cin >> l >> r;
-    if (r - l < 2018) {
-        ans = 2019;
-        for (int i = l; i < r; ++i) {
-            for (int j = i + 1; j <= r; ++j) {
-                ans = min(ans, (ll) (i * j) % 2019);
-            }
-        }
+    ll n, m; cin >> n >> m;
+    string s, t; cin >> s >> t;
+
+    ans = lcm(n, m);
+    bool ok = true;
+    for (int i = 0; i < gcd(n, m); ++i) {
+        if (s[0 + ans / m * i] != t[0 + ans / n * i]) ok = false;
     }
-    cout << ans << endl;
+    
+    if (ok) cout << ans << "\n";
+    else cout << -1 << "\n";
 }
